@@ -10,5 +10,8 @@ format:
 	poetry run isort .
 	poetry run black .
 
+typecheck:
+	poetry run mypy .
+
 test:
 	poetry run pytest --cov=python_project
