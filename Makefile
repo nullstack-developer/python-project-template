@@ -13,5 +13,8 @@ format:
 typecheck:
 	poetry run mypy .
 
+lint:
+	poetry run flake8
+
 test:
 	poetry run pytest --cov=python_project
