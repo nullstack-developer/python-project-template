@@ -48,7 +48,10 @@ def make_logger(name: Optional[str]) -> logging.Logger:
     """
     logger = logging.getLogger(name)
     logger.propagate = False
-    logger.setLevel(logging.DEBUG)
+    if name == "":
+        logger.setLevel(logging.ERROR)
+    else:
+        logger.setLevel(logging.DEBUG)
 
     console = logging.StreamHandler()
     console.setLevel(logging.DEBUG)
